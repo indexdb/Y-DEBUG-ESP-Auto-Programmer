@@ -101,60 +101,80 @@ It separates the auto-programming circuitry from the target board, allowing **bu
 
 ## 设计思路 | Design Concept
 
-![System Architecture](images/architecture.png)
-<!-- ↑ 系统结构图 / 连接示意图 -->
-
 ### 目标板（Target Board）
 
 - ❌ 不集成 USB 转串口芯片  
+  *No USB-to-UART converter on the target board*
+
 - ❌ 不设计自动下载电路  
+  *No on-board auto programming / download circuit*
+
 - ❌ **不需要 BOOT / RESET 按钮**  
-- ✅ 仅引出一个 **2.54mm 间距 6Pin 烧录接口**
+  ***No BOOT / RESET buttons required***
+
+- ✅ 仅引出一个 **2.54mm 间距 6Pin 烧录接口**  
+  *Only a single 2.54mm pitch 6-pin programming header is required*
+
+---
 
 ### 烧录器（ESP Auto Programmer）
 
-- 集成 USB 转串口
-- 自动控制 BOOT / RESET
-- 即插即用，一键烧录
+- 集成 USB 转串口  
+  *Integrated USB-to-UART interface*
+
+- 自动控制 BOOT / RESET  
+  *Automatic BOOT and RESET control*
+
+- 即插即用，一键烧录  
+  *Plug-and-play, one-click programming*
 
 ---
 
 ## 6Pin 接口说明 | 6Pin Interface
 
-![6Pin Header](images/6pin.png)
-
-
-|  Pin | Signal | Description       |
-| ---: | ------ | ----------------- |
-|    1 | 3.3V   | Power             |
-|    2 | EN     | Reset Control     |
-|    3 | IO0    | Boot Mode Control |
-|    4 | RX     | UART RX           |
-|    5 | TX     | UART TX           |
-|    6 | GND    | Ground            |
+|  Pin | Signal | Description (EN)  | 描述 (CN)    |
+| ---: | ------ | ----------------- | ------------ |
+|    1 | 3.3V   | Power supply      | 电源（3.3V） |
+|    2 | EN     | Reset control     | 复位控制     |
+|    3 | IO0    | Boot mode control | 启动模式控制 |
+|    4 | RX     | UART RX           | 串口接收     |
+|    5 | TX     | UART TX           | 串口发送     |
+|    6 | GND    | Ground            | 地           |
 
 ---
 
 ## 项目优势 | Advantages
 
-- ✅ **省略 BOOT / RESET 按钮**
-- ✅ 目标板无需 USB 接口
-- ✅ 自动进入烧录模式
-- ✅ 降低 BOM 成本
-- ✅ 节省 PCB 空间
-- ✅ 一套烧录器适配多个 ESP 项目
+- ✅ **省略 BOOT / RESET 按钮**  
+  ***Eliminates BOOT / RESET buttons***
+
+- ✅ 目标板无需 USB 接口  
+  *No USB connector required on target board*
+
+- ✅ 自动进入烧录模式  
+  *Automatic entry into programming mode*
+
+- ✅ 降低 BOM 成本  
+  *Reduced BOM cost*
+
+- ✅ 节省 PCB 空间  
+  *Smaller PCB footprint*
+
+- ✅ 一套烧录器适配多个 ESP 项目  
+  *One programmer supports multiple ESP projects*
 
 ---
 
 ## 适用场景 | Use Cases
 
 - ESP32 / ESP8266（ESP12F）开发与调试  
+  *ESP32 / ESP8266 (ESP12F) development and debugging*
+
 - 小体积、低成本产品设计  
+  *Compact and cost-sensitive product designs*
+
 - 量产前固件烧录  
+  *Pre-production firmware programming*
+
 - 不希望在产品上暴露 USB 或按键的设备  
-
----
-
-## License
-
-MIT License "# ESP-Auto-Programmer" 
+  *Devices where USB ports or buttons should not be exposed*
