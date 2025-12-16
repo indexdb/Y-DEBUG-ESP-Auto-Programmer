@@ -157,4 +157,4 @@ It separates the auto-programming circuitry from the target board, allowing **bu
 
 ## License
 
-MIT License 
+MIT License "# ESP-Auto-Programmer" 
