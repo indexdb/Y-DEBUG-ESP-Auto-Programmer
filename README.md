@@ -1,4 +1,7 @@
+- 
+  
 - # Y_DEBUG  
+  
   **ESP Auto Programmer / ESP32/ESP12F 自动烧录器**
   
   <img src="images/image2.png" alt="Y_DEBUG Preview" style="zoom:50%;" align="left"/>
@@ -128,6 +131,19 @@
   
   - ✅ 仅引出一个 **Y_DEBUG 接口（2.54mm 间距 6Pin）**  
     Only a single **Y_DEBUG Interface (2.54mm pitch 6-pin)** is required
+    
+  - ✅ **仅引出一个 Y_DEBUG 接口（2.54 mm 间距 6 Pin）**
+     Only a single **Y_DEBUG interface (2.54 mm pitch, 6-pin)** is required.
+    
+    🔧 **Y_DEBUG 针可直接插入焊盘，无需焊接插座即可完成烧录**
+     The Y_DEBUG pins can be directly inserted into the PCB pads, allowing programming **without soldering a connector**.
+    
+    🚀 **特别适合一次性写入固件，后续通过 OTA 进行升级**
+     This design is ideal for **one-time firmware flashing**, with all subsequent updates performed via **OTA (Over-the-Air)**.
+    
+  - <img src="images/image5.png" alt="Y_DEBUG Preview" style="zoom:50%;" align="left"/>
+  
+  - 
   
   ---
   
@@ -164,6 +180,8 @@
   |    4 | RX     | 串口接收     | UART RX           |
   |    5 | TX     | 串口发送     | UART TX           |
   |    6 | GND    | 地           | Ground            |
+  
+  
   
   ---
   
